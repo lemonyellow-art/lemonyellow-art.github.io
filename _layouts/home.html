@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="gallery-grid">
+    {% for artwork in site.artwork %}
+    <div class="artwork-item">
+        <a href="{{ artwork.url | relative_url }}" class="artwork-link">
+            <div class="artwork-image">
+                <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}">
+            </div>
+            <div class="artwork-info">
+                <h3 class="artwork-title">{{ artwork.title }}</h3>
+                <div class="artwork-tags">
+                    {% for tag in artwork.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div> 

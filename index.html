@@ -1,0 +1,25 @@
+---
+layout: home
+title: Gallery
+---
+
+<div class="banner">
+    <h1>Welcome to My Art Gallery</h1>
+    <p>Explore my collection of original artwork and illustrations</p>
+</div>
+
+<div class="gallery-grid">
+    {% for artwork in site.artwork %}
+    <div class="artwork-item">
+        <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}">
+        <div class="artwork-info">
+            <h3>{{ artwork.title }}</h3>
+            <div class="tag-list">
+                {% for tag in artwork.tags %}
+                <a href="{{ '/tags/' | append: tag | relative_url }}" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div> 

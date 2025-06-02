@@ -1,0 +1,27 @@
+title: Art Portfolio
+description: A showcase of my artwork and illustrations
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+collections:
+  artwork:
+    output: true
+    permalink: /artwork/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "artwork"
+    values:
+      layout: "artwork"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor 

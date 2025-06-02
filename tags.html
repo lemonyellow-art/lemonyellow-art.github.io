@@ -1,0 +1,34 @@
+---
+layout: default
+title: Tags
+---
+
+<div class="banner">
+    <h1>Browse by Tags</h1>
+    <p>Explore artwork categorized by different themes and styles</p>
+</div>
+
+{% assign tags = site.artwork | map: "tags" | uniq %}
+
+{% for tag in tags %}
+<section class="tag-section">
+    <h2>{{ tag }}</h2>
+    <div class="gallery-grid">
+        {% for artwork in site.artwork %}
+            {% if artwork.tags contains tag %}
+            <div class="artwork-item">
+                <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}">
+                <div class="artwork-info">
+                    <h3>{{ artwork.title }}</h3>
+                    <div class="tag-list">
+                        {% for artwork_tag in artwork.tags %}
+                        <a href="{{ '/tags/' | append: artwork_tag | relative_url }}" class="tag">{{ artwork_tag }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% endfor %} 

@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<article class="artwork-single">
+    <div class="artwork-image">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+    
+    <div class="artwork-content">
+        <h1 class="artwork-title">{{ page.title }}</h1>
+        
+        <div class="artwork-meta">
+            <div class="artwork-date">{{ page.date | date: "%B %d, %Y" }}</div>
+            <div class="artwork-tags">
+                {% for tag in page.tags %}
+                <a href="{{ site.baseurl }}/tags#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="artwork-description">
+            {{ page.description }}
+        </div>
+
+        <div class="artwork-body">
+            {{ content }}
+        </div>
+    </div>
+</article> 
