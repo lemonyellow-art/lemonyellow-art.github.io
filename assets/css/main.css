@@ -4,7 +4,7 @@
     --background-color: #fff;
     --accent-color: #0066cc;
     --text-color: #333;
-    --sidebar-width: 480px;
+    --sidebar-width: 420px;
     --spacing-unit: 2rem;
     --grid-gap: 2rem;
     --sidebar-color: #fcff9e;  /* Pale yellow color */
@@ -75,10 +75,10 @@ h1, h2, h3, h4, h5, h6 {
 .site-title {
     font-family: var(--heading-font);
     font-size: var(--text-4xl);
-    font-weight: 300;  /* Thinnest weight for site title */
+    font-weight: 300;
     text-decoration: none;
     color: var(--primary-color);
-    letter-spacing: 0.05em;
+    letter-spacing: -0.05em;  /* Negative value brings letters closer together */
 }
 
 .site-nav {
