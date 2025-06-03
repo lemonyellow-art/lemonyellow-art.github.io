@@ -3,32 +3,35 @@ layout: default
 title: Tags
 ---
 
-<div class="banner">
+<div class="tags-content">
     <h1>Browse by Tags</h1>
-    <p>Explore artwork categorized by different themes and styles</p>
-</div>
-
-{% assign tags = site.artwork | map: "tags" | uniq %}
-
-{% for tag in tags %}
-<section class="tag-section">
-    <h2>{{ tag }}</h2>
-    <div class="gallery-grid">
-        {% for artwork in site.artwork %}
-            {% if artwork.tags contains tag %}
-            <div class="artwork-item">
-                <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}">
-                <div class="artwork-info">
-                    <h3>{{ artwork.title }}</h3>
-                    <div class="tag-list">
-                        {% for artwork_tag in artwork.tags %}
-                        <a href="{{ '/tags/' | append: artwork_tag | relative_url }}" class="tag">{{ artwork_tag }}</a>
-                        {% endfor %}
-                    </div>
+    
+    {% assign all_tags = site.artwork | map: "tags" | uniq %}
+    
+    {% for tag in all_tags %}
+    <section id="{{ tag | slugify }}" class="tag-section">
+        <h2>{{ tag }}</h2>
+        <div class="gallery-grid">
+            {% for artwork in site.artwork %}
+                {% if artwork.tags contains tag %}
+                <div class="artwork-item">
+                    <a href="{{ artwork.url | relative_url }}" class="artwork-link">
+                        <div class="artwork-image">
+                            <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}">
+                        </div>
+                        <div class="artwork-info">
+                            <h3 class="artwork-title">{{ artwork.title }}</h3>
+                            <div class="artwork-tags">
+                                {% for artwork_tag in artwork.tags %}
+                                <span class="tag">{{ artwork_tag }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-</section>
-{% endfor %} 
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+</div> 

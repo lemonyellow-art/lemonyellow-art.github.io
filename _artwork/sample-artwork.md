@@ -1,15 +1,14 @@
 ---
 title: "Sample Artwork"
 date: 2024-03-20
-image: /assets/images/sample-artwork.jpg
+image: /assets/images/20220111_FanjingStairs_EN-IN6226216526_1920x1080.jpg
 tags: 
   - digital
   - illustration
-  - nature
-description: "A beautiful digital illustration showcasing nature themes"
+description: "A sample artwork to demonstrate the layout"
 ---
 
-This is a sample artwork post. You can add detailed description of your artwork here using Markdown formatting.
+This is a sample artwork post to demonstrate the layout and styling of the portfolio.
 
 ## About this piece
 
