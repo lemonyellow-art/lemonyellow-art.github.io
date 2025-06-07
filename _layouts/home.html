@@ -3,7 +3,8 @@ layout: default
 ---
 
 <div class="gallery-grid">
-    {% for artwork in site.artwork %}
+    {% assign sorted_artwork = site.artwork | sort: 'date' | reverse %}
+    {% for artwork in sorted_artwork %}
     <div class="artwork-item">
         <a href="{{ artwork.url | relative_url }}" class="artwork-link">
             <div class="artwork-image">
