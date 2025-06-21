@@ -7,7 +7,7 @@
     --sidebar-width: 33.333vw;  /* Changed from 420px to 1/3 of viewport width */
     --spacing-unit: 2rem;
     --grid-gap: 2rem;
-    --sidebar-color: #f3f859;  /* Pale yellow color */
+    --sidebar-color: #faff6e;  /* Pale yellow color */
     
     /* Typography */
     --heading-font: 'Montserrat', sans-serif;
@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: var(--text-base);  /* Changed from var(--text-lg) to var(--text-base) */
+    font-size: var(--text-lg);  /* Changed from var(--text-lg) to var(--text-base) */
     font-weight: 200;  /* Thin weight for navigation */
     opacity: 0.8;
 }
@@ -322,7 +322,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; 
     }
 
     .site-title {
