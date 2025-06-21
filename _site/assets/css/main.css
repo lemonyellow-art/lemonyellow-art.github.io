@@ -4,14 +4,15 @@
     --background-color: #fff;
     --accent-color: #0066cc;
     --text-color: #333;
-    --sidebar-width: 420px;
+    --sidebar-width: 33.333vw;  /* Changed from 420px to 1/3 of viewport width */
     --spacing-unit: 2rem;
     --grid-gap: 2rem;
-    --sidebar-color: #fcff9e;  /* Pale yellow color */
+    --sidebar-color: #f3f859;  /* Pale yellow color */
     
     /* Typography */
     --heading-font: 'Montserrat', sans-serif;
     --body-font: 'Montserrat', sans-serif;
+    --chinese-font: 'ZCOOL XiaoWei', cursive;
     
     /* Font sizes - doubled */
     --text-sm: 1.5rem;      /* from 0.875rem */
@@ -81,6 +82,11 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.05em;  /* Negative value brings letters closer together */
 }
 
+.site-title .chinese {
+    font-family: var(--chinese-font);
+    font-weight: 400;
+}
+
 .site-nav {
     margin-top: auto;
     margin-bottom: auto;
@@ -92,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-color);
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: var(--text-lg);
+    font-size: var(--text-base);  /* Changed from var(--text-lg) to var(--text-base) */
     font-weight: 200;  /* Thin weight for navigation */
     opacity: 0.8;
 }
